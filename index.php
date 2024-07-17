@@ -142,7 +142,7 @@ echo "Volume : $volume cm^3 <br>"
 $age = 21;
 
 if($age>=18){
-    echo "Enter";
+    echo "Enter<br>";
 }
 else if($age<= 0){
     echo "Really";
@@ -150,4 +150,87 @@ else if($age<= 0){
 else{
     echo "Nope";
 }
+
+/*
+Logical Operators
+&& = True if both conditions are true
+|| = True if at least one condition is true
+! = True if false. False if true.
+*/
+
+// Switch
+$grade = "B";
+switch ($grade) {
+    case "A":
+        echo "Great";
+        break;
+    case "B":
+        echo "Good";
+        break;
+    case "C":
+        echo "Okay";
+        break;
+    case "D":
+        echo "Poor";
+        break;
+    case "E":
+        echo "Fail";
+        break;
+    default:
+        echo "$grade is not a grade";
+}
+?>
+
+<!-- for loop -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <form action="index.php" method="post">
+        <label>Enter a number:</label>
+        <input type="text" name="counter">
+        <input type="submit" value="start">
+    </form>
+ </body>
+ </html>
+
+ <?php
+ $counter = $_POST ["counter"];
+ for($i = 1;$i <= $counter;$i++){
+    echo $i . "<br>";
+ }
+ ?>
+
+ <!-- while loop -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="index.php" method="post">
+        <input type="submit" name="stop" value="stop">
+    </form>
+  </body>
+  </html>
+<?php
+$seconds = 0;
+$running =  true;
+
+while($running){
+    if(isset( $_POST ["stop"] )){
+        $running = false;
+    }
+    else{
+        $seconds++;
+        echo $seconds . "<br>" ;
+    }
+}
+
 ?>
